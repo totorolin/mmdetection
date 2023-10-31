@@ -47,7 +47,9 @@ train_pipeline_stage2 = [
 ]
 
 train_dataloader = dict(dataset=dict(pipeline=train_pipeline))
-
+test_evaluator = dict(
+    format_only=True,
+    outfile_prefix='./work_dirs/coco_detection/rtmdet_s_val')
 custom_hooks = [
     dict(
         type='EMAHook',
