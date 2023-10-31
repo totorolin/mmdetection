@@ -130,7 +130,10 @@ train_cfg = dict(
     dynamic_intervals=[(max_epochs - stage2_num_epochs, 1)])
 
 val_evaluator = dict(proposal_nums=(100, 1, 10))
-test_evaluator = val_evaluator
+test_evaluator = dict(
+    proposal_nums=(100, 1, 10),
+    format_only=True,
+    outfile_prefix='./work_dirs/coco_detection/rtmdet_l_box')
 
 # optimizer
 optim_wrapper = dict(
