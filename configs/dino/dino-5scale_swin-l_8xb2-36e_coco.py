@@ -11,3 +11,7 @@ param_scheduler = [
         milestones=[27, 33],
         gamma=0.1)
 ]
+test_evaluator = dict(
+    format_only=True,
+    outfile_prefix='./work_dirs/coco_detection/dino_val')
+
