@@ -34,7 +34,12 @@ train_pipeline = [
     dict(type='PackDetInputs')
 ]
 train_dataloader = dict(dataset=dict(pipeline=train_pipeline))
-
+eval_evaluator = dict(classwise=True)
+test_evaluator = dict(classwise=True)
+test_evaluator = dict(
+    format_only=False,
+    outfile_prefix='./work_dirs/coco_detection/fcos_val'
+)
 # training schedule for 2x
 max_epochs = 24
 train_cfg = dict(max_epochs=max_epochs)
